@@ -64,7 +64,6 @@ public class Task1 {
                 .uri(java.net.URI.create(DEFAULT_URL + "/users/" + userId))
                 .header("Content-Type", "application/json")
                 .PUT(HttpRequest.BodyPublishers.ofString("{\"" + element + "\":\"" + dataOfNewElement + "\"}"))
-                .GET()
                 .build();
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
